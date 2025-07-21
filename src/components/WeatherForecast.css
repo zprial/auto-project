@@ -1,0 +1,213 @@
+.forecast-container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+.forecast-title {
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 0 0 1.5rem 0;
+  text-align: center;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.forecast-error {
+  color: white;
+  text-align: center;
+  padding: 2rem;
+  opacity: 0.7;
+}
+
+.forecast-list {
+  display: grid;
+  gap: 1rem;
+}
+
+.forecast-item {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 15px;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: auto auto 1fr auto auto;
+  gap: 1rem;
+  align-items: center;
+  transition: all 0.3s ease;
+  color: white;
+}
+
+.forecast-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(5px);
+}
+
+.forecast-item.today {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.forecast-date {
+  text-align: center;
+  min-width: 80px;
+}
+
+.day-name {
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 0.25rem;
+}
+
+.day-month {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.forecast-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+}
+
+.forecast-icon img {
+  width: 50px;
+  height: 50px;
+  filter: drop-shadow(1px 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.forecast-condition {
+  font-size: 0.95rem;
+  min-width: 120px;
+  text-align: left;
+}
+
+.forecast-temps {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  min-width: 80px;
+}
+
+.temp-high {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.temp-low {
+  font-size: 0.95rem;
+  opacity: 0.7;
+}
+
+.forecast-details {
+  display: flex;
+  gap: 1rem;
+  min-width: 120px;
+  justify-content: flex-end;
+}
+
+.detail {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  font-size: 0.85rem;
+}
+
+.detail-icon {
+  font-size: 0.9rem;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .forecast-container {
+    padding: 1.5rem;
+  }
+  
+  .forecast-item {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    text-align: center;
+    padding: 1.25rem;
+  }
+  
+  .forecast-date {
+    min-width: auto;
+  }
+  
+  .forecast-icon {
+    min-width: auto;
+  }
+  
+  .forecast-condition {
+    min-width: auto;
+    text-align: center;
+  }
+  
+  .forecast-temps {
+    min-width: auto;
+    justify-content: center;
+  }
+  
+  .forecast-details {
+    min-width: auto;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .forecast-container {
+    padding: 1rem;
+  }
+  
+  .forecast-title {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+  }
+  
+  .forecast-item {
+    padding: 1rem;
+    gap: 0.75rem;
+  }
+  
+  .forecast-icon img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .day-name {
+    font-size: 0.9rem;
+  }
+  
+  .forecast-condition {
+    font-size: 0.85rem;
+  }
+  
+  .temp-high {
+    font-size: 1rem;
+  }
+  
+  .temp-low {
+    font-size: 0.9rem;
+  }
+}
+
+/* 平板设计 - 横向滚动 */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .forecast-list {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  
+  .forecast-item {
+    min-width: 300px;
+    flex-shrink: 0;
+  }
+}
